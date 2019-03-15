@@ -50,7 +50,7 @@
     <child link="rear_right_wheel"/>
     <axis xyz="0 1 0" rpy="0 0 0"/>
     <limit effort="10000" velocity="1000"/>
-    <dynamics damping="1.0" friction="1.0"/>
+    <dynamics damping="0" friction="0"/>
   </joint>
 
   <joint name="rear_left_wheel_hinge" type="continuous">
@@ -59,7 +59,7 @@
     <child link="rear_left_wheel"/>
     <axis xyz="0 1 0" rpy="0 0 0"/>
     <limit effort="10000" velocity="1000"/>
-    <dynamics damping="1.0" friction="1.0"/>
+    <dynamics damping="0" friction="0"/>
   </joint>
 
   <joint name="arm_support_joint" type="fixed">
