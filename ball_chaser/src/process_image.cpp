@@ -31,12 +31,14 @@ void process_image_callback(const sensor_msgs::Image img)
     int left = img.step / 3;
     int right = left * 2;
     bool ball_found = false;
-    float forward_speed = 5;
+    float forward_speed = 2;
+    float turning_speed = 0.5;
     float stop = 0.0;
     // Turn 5 degrees / second in radians = 0.09
     // Convention is counter clockwise is positive 
-    float turn_left = 0.09;
-    float turn_right = -0.09;
+    // Note: The wheels are close together, to get the bot to turn, this has to be higher values.
+    float turn_left = 4.0;
+    float turn_right = -4.0;
 
 
     // Loop through each pixel in the image and check if there's a bright white one
@@ -54,13 +56,13 @@ void process_image_callback(const sensor_msgs::Image img)
             {
                 ROS_INFO("Driving left");
                 // Ball is to the left, turn left
-                drive_robot( stop, turn_left );
+                drive_robot( turning_speed, turn_left );
             }
             else if ( i%img.step > right )
             {
                 ROS_INFO("Driving right");
                 // Ball is to the right, turn right 
-                drive_robot( stop, turn_right );
+                drive_robot( turning_speed, turn_right );
             }
             else
             {
