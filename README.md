@@ -1,4 +1,4 @@
-# goChaseIt
-RoboND Go Chase It project
+# whereAmI
+RoboND Where Am I robot localization project
 
-Skid steer style bot design
+
