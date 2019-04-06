@@ -87,5 +87,33 @@
     </sensor>
   </gazebo>
 
+  <!-- Materials -->
+  <gazebo reference="chassis">
+    <material>Gazebo/ZincYellow</material>
+  </gazebo>
+  <gazebo reference="cab">
+    <material>Gazebo/ZincYellow</material>
+  </gazebo>
+  <gazebo reference="arm_support">
+    <material>Gazebo/ZincYellow</material>
+  </gazebo>
+  <gazebo reference="front_right_wheel">
+    <material>Gazebo/FlatBlack</material>
+  </gazebo>
+  <gazebo reference="front_left_wheel">
+    <material>Gazebo/FlatBlack</material>
+  </gazebo>
+  <gazebo reference="rear_right_wheel">
+    <material>Gazebo/FlatBlack</material>
+  </gazebo>
+  <gazebo reference="rear_left_wheel">
+    <material>Gazebo/FlatBlack</material>
+  </gazebo>
+  <gazebo reference="arm">
+    <material>Gazebo/red</material>
+  </gazebo>
+  <gazebo reference="camera">
+    <material>Gazebo/Red</material>
+  </gazebo>
 
 </robot>

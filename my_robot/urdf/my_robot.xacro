@@ -2,10 +2,10 @@
 
 <robot name="my_robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
+
   <xacro:include filename="$(find my_robot)/urdf/my_robot.gazebo" />
 
-  <link name="robot_footprint"></link>
-
+  <!-- Joints -->
   <joint name="robot_footprint_joint" type="fixed">
     <origin xyz="0 0 0" rpy="0 0 0" />
     <parent link="robot_footprint"/>
@@ -50,7 +50,7 @@
     <child link="rear_right_wheel"/>
     <axis xyz="0 1 0" rpy="0 0 0"/>
     <limit effort="10000" velocity="1000"/>
-    <dynamics damping="1.0" friction="0.5"/>
+    <dynamics damping="1.0" friction="15.0"/>
   </joint>
 
   <joint name="rear_left_wheel_hinge" type="continuous">
@@ -59,7 +59,7 @@
     <child link="rear_left_wheel"/>
     <axis xyz="0 1 0" rpy="0 0 0"/>
     <limit effort="10000" velocity="1000"/>
-    <dynamics damping="1.0" friction="0.5"/>
+    <dynamics damping="1.0" friction="15.0"/>
   </joint>
 
   <joint name="arm_support_joint" type="fixed">
@@ -76,6 +76,9 @@
     <limit upper="0.52" lower="0" effort="10000" velocity="1000"/>
     <dynamics damping="1.0" friction="1.0"/>
   </joint>
+
+  <!-- Links-->
+  <link name="robot_footprint"></link>
 
   <link name='chassis'>
     <pose>0 0 0.1 0 0 0</pose>
@@ -102,9 +105,6 @@
       <geometry>
         <box size="0.4 0.2 0.1"/>
       </geometry>
-      <material name="Yellow">
-         <color rgba="1 0.82 0 1"/>
-      </material>
     </visual>
 
     <collision name='cab_collision'>
@@ -119,11 +119,7 @@
       <geometry>
         <box size="0.3 0.18 0.3"/>
       </geometry>
-      <material name="Yellow">
-         <color rgba="1 0.82 0 1"/>
-      </material>
     </visual>
-
 
   </link>
 
@@ -150,9 +146,6 @@
       <origin xyz="-0.15 0 0.15" rpy=" 0 0 0"/>
       <geometry>
         <box size="0.1 0.18 0.2"/> </geometry>
-      <material name="Yellow">
-         <color rgba="1 0.82 0 1"/>
-      </material>
     </visual>
 
   </link>
@@ -179,9 +172,6 @@
       <geometry>
         <cylinder radius="0.1" length="0.05"/>
       </geometry>
-      <material name="Grey">
-         <color rgba="0.3 0.3 0.3 1"/>
-      </material>
     </visual>
 
   </link>
@@ -208,9 +198,6 @@
       <geometry>
         <cylinder radius="0.1" length="0.05"/>
       </geometry>
-      <material name="Grey">
-         <color rgba="0.3 0.3 0.3 1"/>
-      </material>
     </visual>
 
   </link>
@@ -237,9 +224,6 @@
       <geometry>
         <cylinder radius="0.1" length="0.05"/>
       </geometry>
-      <material name="Grey">
-         <color rgba="0.3 0.3 0.3 1"/>
-      </material>
     </visual>
 
   </link>
@@ -266,9 +250,6 @@
       <geometry>
         <cylinder radius="0.1" length="0.05"/>
       </geometry>
-      <material name="Grey">
-         <color rgba="0.3 0.3 0.3 1"/>
-      </material>
     </visual>
 
   </link>
@@ -295,9 +276,6 @@
       <geometry>
         <box size="0.58 0.01 0.04"/>
       </geometry>
-      <material name="Cyan">
-         <color rgba="0 1 1 1"/>
-      </material>
     </visual>
 
     <collision name='right_arm_collision'>
@@ -312,9 +290,6 @@
       <geometry>
         <box size="0.58 0.01 0.04"/>
       </geometry>
-      <material name="Cyan">
-         <color rgba="0 1 1 1"/>
-      </material>
     </visual>
 
     <collision name='bucket_collision'>
@@ -329,9 +304,6 @@
       <geometry>
         <box size="0.19 0.35 0.15"/>
       </geometry>
-      <material name="Cyan">
-         <color rgba="0 1 1 1"/>
-      </material>
     </visual>
 
   </link>
