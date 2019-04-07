@@ -12,8 +12,13 @@
         <wheelDiameter>0.2</wheelDiameter>
         <robotBaseFrame>robot_footprint</robotBaseFrame>
         <torque>20</torque>
-        <topicName>cmd_vel</topicName>
-        <broadcastTF>false</broadcastTF>
+        <commandTopic>cmd_vel</commandTopic>
+        <broadcastTF>true</broadcastTF>
+        <odometryTopic>odom</odometryTopic>
+        <odometryFrame>odom</odometryFrame>
+        <covariance_x>0.0001</covariance_x>
+        <covariance_y>0.0001</covariance_y>
+        <covariance_yaw>0.01</covariance_yaw>
       </plugin>
     </gazebo>
 
@@ -109,8 +114,14 @@
   <gazebo reference="rear_left_wheel">
     <material>Gazebo/FlatBlack</material>
   </gazebo>
-  <gazebo reference="arm">
-    <material>Gazebo/red</material>
+  <gazebo reference="right_arm">
+    <material>Gazebo/Turquoise</material>
+  </gazebo>
+  <gazebo reference="left_arm">
+    <material>Gazebo/Turquoise</material>
+  </gazebo>
+  <gazebo reference="bucket">
+    <material>Gazebo/FlatBlack</material>
   </gazebo>
   <gazebo reference="camera">
     <material>Gazebo/Red</material>
